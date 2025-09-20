@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -13,7 +14,6 @@ import {
   Award, 
   Heart,
   Waves,
-  Fish,
   MessageCircle,
   Sun
 } from "lucide-react";
@@ -155,8 +155,16 @@ export default function Home() {
               className="mb-8"
             >
               <div className="flex items-center justify-center mb-6">
-                <div className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center mb-4">
-                  <Fish className="w-10 h-10 text-white" />
+                <div className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-md border border-white/30 overflow-hidden relative shadow-lg shadow-white/10">
+                  <Image 
+                    src="/stingray_logo.png" 
+                    alt="Stingray Swim Academy Logo" 
+                    fill
+                    className="object-cover"
+                  />
+                  {/* Glassy overlay effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent pointer-events-none"></div>
+                  <div className="absolute top-1 left-1 w-3 h-3 bg-white/30 rounded-full blur-sm pointer-events-none"></div>
                 </div>
               </div>
               <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 tracking-tight">
@@ -317,6 +325,106 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Happy Students Section */}
+        <section className="py-20 px-4">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-5xl font-bold text-white mb-6">Making Waves Together</h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-orange-400 to-cyan-400 mx-auto mb-8"></div>
+              <p className="text-xl text-blue-100">Watch our students gain confidence and create lasting memories in the water!</p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8 }}
+                className="group"
+              >
+                <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-4 overflow-hidden hover:scale-105 transition-all duration-300">
+                  <CardContent className="p-0">
+                    <div className="relative h-80 rounded-lg overflow-hidden mb-4">
+                      <Image 
+                        src="/student-photo-1.jpg" 
+                        alt="Swimming instructor teaching children in the pool" 
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                    </div>
+                    <div className="text-center">
+                      <h3 className="text-xl font-semibold text-white mb-2">Learning Together</h3>
+                      <p className="text-blue-200">Building confidence and skills with personalized instruction in a safe, fun environment.</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="group"
+              >
+                <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-4 overflow-hidden hover:scale-105 transition-all duration-300">
+                  <CardContent className="p-0">
+                    <div className="relative h-80 rounded-lg overflow-hidden mb-4">
+                      <Image 
+                        src="/student-photo-2.jpg" 
+                        alt="Happy students with their swimming instructor after a successful lesson" 
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                    </div>
+                    <div className="text-center">
+                      <h3 className="text-xl font-semibold text-white mb-2">Success & Smiles</h3>
+                      <p className="text-blue-200">Celebrating achievements and creating lasting memories with every swimming milestone.</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-center mt-12"
+            >
+              <Card className="bg-gradient-to-r from-cyan-500/20 to-blue-500/20 backdrop-blur-md border border-cyan-300/30 p-8 max-w-2xl mx-auto">
+                <CardContent className="p-0">
+                  <h3 className="text-2xl font-bold text-white mb-4">
+                    Join Our Swimming Family! 🏊‍♀️
+                  </h3>
+                  <p className="text-cyan-100 mb-6">
+                    Every child deserves to feel confident and safe in the water. Our experienced instructors create a nurturing environment where learning becomes an adventure filled with laughter and achievement.
+                  </p>
+                  <div className="flex flex-wrap justify-center gap-6 text-white">
+                    <div className="flex items-center gap-2">
+                      <Heart className="w-5 h-5 text-pink-300" />
+                      <span className="text-sm">Caring Instruction</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Users className="w-5 h-5 text-cyan-300" />
+                      <span className="text-sm">Small Class Sizes</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Award className="w-5 h-5 text-yellow-300" />
+                      <span className="text-sm">Proven Results</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Contact Section */}
         <section id="contact" className="py-20 px-4">
           <div className="max-w-4xl mx-auto">
@@ -438,7 +546,17 @@ export default function Home() {
             <Card className="bg-white/5 backdrop-blur-md border border-white/10 p-6">
               <CardContent className="p-0">
                 <div className="flex items-center justify-center gap-2 mb-4">
-                  <Fish className="w-8 h-8 text-cyan-300" />
+                  <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md border border-white/30 overflow-hidden relative shadow-md shadow-white/10">
+                    <Image 
+                      src="/stingray_logo.png" 
+                      alt="Stingray Swim Academy Logo" 
+                      fill
+                      className="object-cover"
+                    />
+                    {/* Glassy overlay effect */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent pointer-events-none"></div>
+                    <div className="absolute top-0.5 left-0.5 w-1.5 h-1.5 bg-white/30 rounded-full blur-sm pointer-events-none"></div>
+                  </div>
                   <h3 className="text-2xl font-bold text-white">Stingray Swim Academy</h3>
                 </div>
                 <p className="text-blue-200 mb-4">
