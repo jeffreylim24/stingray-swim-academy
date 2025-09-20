@@ -6,11 +6,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { 
-  Phone, 
   Mail, 
   Instagram, 
   MapPin, 
-  Star, 
   Users, 
   Award, 
   Heart,
@@ -185,7 +183,7 @@ export default function Home() {
                     SAFE, FUN & FRIENDLY LEARN TO SWIM LESSONS
                   </h2>
                   <p className="text-xl text-blue-100 mb-6">
-                    Inspired by the stingray's calm power and effortless grace, we empower every child to swim with confidence and strength - one smile at a time.
+                    Inspired by the stingray&apos;s calm power and effortless grace, we empower every child to swim with confidence and strength - one smile at a time.
                   </p>
                   <div className="flex flex-wrap justify-center gap-4 text-white mb-6">
                     <div className="flex items-center gap-2">
@@ -224,7 +222,7 @@ export default function Home() {
               <Button 
                 size="lg"
                 className="bg-white/20 backdrop-blur-md border border-white/30 hover:bg-white/30 text-white text-xl px-8 py-4 rounded-xl transition-all duration-300"
-                onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Book Your Trial Lesson
                 <Waves className="w-5 h-5 ml-2" />
@@ -266,7 +264,7 @@ export default function Home() {
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 rounded-full bg-cyan-400 mt-2"></div>
-                        <p className="text-blue-100">Tailored Lessons for Your Child's Progress</p>
+                        <p className="text-blue-100">Tailored Lessons for Your Child&apos;s Progress</p>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 rounded-full bg-cyan-400 mt-2"></div>
@@ -300,7 +298,7 @@ export default function Home() {
                       </div>
                       <div>
                         <h4 className="font-semibold text-white">Personalized Learning</h4>
-                        <p className="text-blue-200 text-sm">Adapted to each child's unique pace and style</p>
+                        <p className="text-blue-200 text-sm">Adapted to each child&apos;s unique pace and style</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-4">
@@ -391,7 +389,7 @@ export default function Home() {
                     <h3 className="text-2xl font-bold text-white mb-6">Book Your Trial</h3>
                     <form onSubmit={handleSubmit} className="space-y-4">
                       <Input
-                        placeholder="Child's Name"
+                        placeholder="Child&apos;s Name"
                         value={formData.name}
                         onChange={(e) => setFormData({...formData, name: e.target.value})}
                         className="bg-white/10 border-white/20 text-white placeholder-white/60"
@@ -414,7 +412,7 @@ export default function Home() {
                         required
                       />
                       <Textarea
-                        placeholder="Tell us about your child's swimming experience and any special needs..."
+                        placeholder="Tell us about your child&apos;s swimming experience and any special needs..."
                         value={formData.message}
                         onChange={(e) => setFormData({...formData, message: e.target.value})}
                         className="bg-white/10 border-white/20 text-white placeholder-white/60 h-24"
